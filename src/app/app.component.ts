@@ -4,7 +4,7 @@ import { NgIf, NgForOf } from '@angular/common';
 import { User } from './models/user';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-shipment-list',
   imports: [RouterOutlet, NgIf, NgForOf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

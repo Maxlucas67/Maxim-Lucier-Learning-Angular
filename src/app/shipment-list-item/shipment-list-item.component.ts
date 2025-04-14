@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Shipment} from '../models/shipment-list';
 
 @Component({
   selector: 'app-shipment-list-item',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './shipment-list-item.component.css'
 })
 export class ShipmentListItemComponent {
-
+  @Input() shipment!: Shipment;
 }
