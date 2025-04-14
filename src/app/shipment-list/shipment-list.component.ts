@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Shipment } from '../models/shipment-list';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-shipment-list',
-  imports: [],
+  imports: [NgForOf],
   templateUrl: './shipment-list.component.html',
   styleUrl: './shipment-list.component.css'
 })
