@@ -12,11 +12,3 @@ export class AppComponent {
   name = 'Maxim Lucier'
   studentNum = '0844425'
 }
-
-export interface login {
-  name: string;
-  phoneNum?: string;
-  email: string;
-  age: number;
-  shippingAdress: string;
-}
