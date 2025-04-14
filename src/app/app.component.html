@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<body>
+<h1>Max's Shipping</h1>
+<h3>All Current Users</h3>
+<hr />
+  <div *ngFor="let user of users" class="user-example">
+    <h2>{{ user.name }}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+    <p><strong>Shipping Address:</strong> {{ user.shippingAdress }}</p>
 
-<h1>Assignment 1</h1>
-<p>Hi my name is {{name}}!</p>
-<p>And my Student Number is {{studentNum}}.</p>
+    <div *ngIf="user.phoneNum">
+      <p><strong>Phone Number:</strong> {{ user.phoneNum }}</p>
+    </div>
+    <hr />
+  </div>
 
-</body>
-</html>
+
