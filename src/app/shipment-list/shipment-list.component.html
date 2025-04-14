@@ -1,7 +1,7 @@
 <div class="shipment-list">
   <app-shipment-list-item
-    *ngFor="let shipment of shipments"
-    [shipment]="shipment">
+    *ngFor="let shipment of shipments; let i = index"
+    [shipment]="shipment"
+    [index]="i">
   </app-shipment-list-item>
 </div>
-

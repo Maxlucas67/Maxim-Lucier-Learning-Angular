@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.shipment-item {
+  border: 2px solid #333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.even {
+  background-color: cadetblue;
+}
+
+.odd {
+  background-color: mediumspringgreen;
+  color: white;
+}

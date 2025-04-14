@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgIf, NgForOf } from '@angular/common';
 import { User } from './models/user';
+import { ShipmentListComponent } from './shipment-list/shipment-list.component';
 
 @Component({
-  selector: 'app-shipment-list',
-  imports: [RouterOutlet, NgIf, NgForOf],
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, NgIf, NgForOf, ShipmentListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
