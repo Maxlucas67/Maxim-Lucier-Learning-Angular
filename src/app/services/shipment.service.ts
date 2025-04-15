@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Shipment} from '../models/shipment.model';
 import { MOCK_SHIPMENTS} from '../data/mock-content';
+import { Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ import { MOCK_SHIPMENTS} from '../data/mock-content';
 export class ShipmentService {
   private shipments = MOCK_SHIPMENTS;
 
-  getShipments(): Shipment[] {
-    return this.shipments;
+  getShipments(): Observable<Shipment[]> {
+    return of(this.shipments);
   }
 
   addShipments(shipment: Shipment): void {
