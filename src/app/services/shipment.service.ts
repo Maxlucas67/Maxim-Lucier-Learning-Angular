@@ -24,7 +24,7 @@ export class ShipmentService {
   }
 
   updateShipment(id: number, updatedShipment: Shipment): Observable<Shipment[]> {
-    const index = this.shipments.findIndex(s => s.id === updatedShipment.id);
+    const index = this.shipments.findIndex(s => s.id === id);
     if (index !== -1) {
       this.shipments[index] = updatedShipment;
     }
