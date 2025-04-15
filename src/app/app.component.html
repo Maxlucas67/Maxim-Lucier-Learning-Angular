@@ -1,6 +1,10 @@
 <h1>Max's Shipping</h1>
-<h3>Single Shipment</h3>
+<nav>
+  <a routerLink="/shipments">    Shipment List    </a>
 
+  <a routerLink="/shipment/101">    Shipment Detail    </a>
+</nav>
+<h3>Single Shipment</h3>
 <app-shipment-list-item
   *ngIf="singleShipment"
   [shipment]="singleShipment"
@@ -8,6 +12,5 @@
 </app-shipment-list-item>
 
 <h3>All Current Shipments</h3>
-<hr />
-<app-shipment-list></app-shipment-list>
+<router-outlet></router-outlet>
 
