@@ -1,16 +1,13 @@
 <h1>Max's Shipping</h1>
-<h3>All Current Users</h3>
+<h3>Single Shipment</h3>
+
+<app-shipment-list-item
+  *ngIf="singleShipment"
+  [shipment]="singleShipment"
+  [index]="0">
+</app-shipment-list-item>
+
+<h3>All Current Shipments</h3>
 <hr />
-  <div *ngFor="let user of users" class="user-example">
-    <h2>{{ user.name }}</h2>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Age:</strong> {{ user.age }}</p>
-    <p><strong>Shipping Address:</strong> {{ user.shippingAdress }}</p>
-
-    <div *ngIf="user.phoneNum">
-      <p><strong>Phone Number:</strong> {{ user.phoneNum }}</p>
-    </div>
-    <hr />
-  </div>
-
 <app-shipment-list></app-shipment-list>
+
