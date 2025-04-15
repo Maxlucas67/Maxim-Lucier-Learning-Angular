@@ -7,7 +7,7 @@ import { Observable, of} from 'rxjs';
   providedIn: 'root'
 })
 export class ShipmentService {
-  private shipments = MOCK_SHIPMENTS;
+  private shipments = [...MOCK_SHIPMENTS];
 
   getShipments(): Observable<Shipment[]> {
     return of(this.shipments);
@@ -24,18 +24,19 @@ export class ShipmentService {
   }
 
   updateShipment(id: number, updatedShipment: Shipment): Observable<Shipment[]> {
-    const index = this.shipments.findIndex(s => s.id === id);
+    const index = this.shipments.findIndex(s => s.id === updatedShipment.id);
     if (index !== -1) {
       this.shipments[index] = updatedShipment;
     }
     return of(this.shipments);
   }
 
-  deleteShipment(id: number): Observable<Shipment[]> {
-    const shipmentIndex = this.shipments.findIndex(s => s.id === id);
-    if (shipmentIndex !== -1) {
-      this.shipments.splice(shipmentIndex, 1);
+  deleteShipment(id: number): Observable<Shipment | undefined> {
+    const index = this.shipments.findIndex(s => s.id === id);
+    if (index !== -1) {
+      const removed = this.shipments.splice(index, 1)[0];
+      return of(removed);
     }
-    return of(this.shipments);
+    return of(undefined);
   }
 }

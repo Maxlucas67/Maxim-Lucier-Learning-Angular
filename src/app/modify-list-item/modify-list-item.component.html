@@ -1,1 +1,27 @@
-<p>modify-list-item works!</p>
+<h2>{{ editMode ? 'Edit Shipment' : 'Add Shipment' }}</h2>
+
+<form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()">
+  <label>Sender Name:</label>
+  <input formControlName="senderName" required />
+
+  <label>Receiver Name:</label>
+  <input formControlName="receiverName" required />
+
+  <label>Address:</label>
+  <input formControlName="address" required />
+
+  <label>Weight (kg):</label>
+  <input type="number" formControlName="weight" required />
+
+  <label>
+    <input type="checkbox" formControlName="isFragile" />
+    Fragile
+  </label>
+
+  <label>Image URL:</label>
+  <input formControlName="image" />
+
+  <button type="submit" [disabled]="shipmentForm.invalid">
+    {{ editMode ? 'Update Shipment' : 'Add Shipment' }}
+  </button>
+</form>

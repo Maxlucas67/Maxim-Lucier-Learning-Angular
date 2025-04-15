@@ -1,7 +1,14 @@
 <div class="shipment-list">
-  <app-shipment-list-item
-    *ngFor="let shipment of shipments; let i = index"
-    [shipment]="shipment"
-    [index]="i">
-  </app-shipment-list-item>
+  <div *ngFor="let shipment of shipments; let i = index">
+    <app-shipment-list-item
+      [shipment]="shipment"
+      [index]="i">
+    </app-shipment-list-item>
+
+    <div class="action-buttons">
+      <button [routerLink]="['/modify', shipment.id]">Edit</button>
+      <button (click)="deleteShipment(shipment.id)">Delete</button>
+    </div>
+  </div>
 </div>
+
