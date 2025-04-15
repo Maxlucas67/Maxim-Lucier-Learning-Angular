@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Shipment } from '../models/shipment.model';
 import {NgIf, NgClass, CurrencyPipe, DatePipe, UpperCasePipe} from '@angular/common';
+import {ShipmentLabelPipe} from '../pipes/shipment-label.pipe';
 
 @Component({
   selector: 'app-shipment-list-item',
-  imports: [NgIf, NgClass, CurrencyPipe, DatePipe, UpperCasePipe],
+  imports: [NgIf, NgClass, CurrencyPipe, DatePipe, UpperCasePipe, ShipmentLabelPipe],
   templateUrl: './shipment-list-item.component.html',
   standalone: true,
   styleUrl: './shipment-list-item.component.css'
