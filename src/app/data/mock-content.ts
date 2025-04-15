@@ -9,7 +9,8 @@ export const MOCK_SHIPMENTS: Shipment[] = [
     receiverName: 'Marg Lee',
     address: '1110 Fortworth',
     weight: 3.5,
-    isFragile: true
+    isFragile: true,
+    image: 'models/cardboard.png'
   },
   {
     id: 102,

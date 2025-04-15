@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { NgIf, NgForOf } from '@angular/common';
 import { User } from './models/user';
 import { ShipmentListComponent } from './shipment-list/shipment-list.component';
@@ -10,7 +10,7 @@ import { Shipment} from './models/shipment.model';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgForOf, ShipmentListComponent, ShipmentListItemComponent, RouterLink],
+  imports: [RouterOutlet, NgIf, NgForOf, ShipmentListComponent, ShipmentListItemComponent, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

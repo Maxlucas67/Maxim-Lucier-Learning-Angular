@@ -1,5 +1,6 @@
 <div [ngClass]="{'even': isEven(), 'odd': !isEven()}" class="shipment-item">
   <h2>Shipment for: {{ shipment.receiverName }}</h2>
+  <img *ngIf="shipment.image" [src]="shipment.image" alt="Shipment Image" class="shipment-image">
   <p><strong>Sender:</strong> {{ shipment.senderName }}</p>
   <p><strong>Address:</strong> {{ shipment.address }}</p>
   <p><strong>Weight:</strong> {{ shipment.weight }} kg</p>

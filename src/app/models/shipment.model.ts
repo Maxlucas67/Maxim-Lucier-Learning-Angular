@@ -5,4 +5,5 @@ export interface Shipment {
   address: string;
   weight: number;
   isFragile?: boolean
+  image?: string;
 }
