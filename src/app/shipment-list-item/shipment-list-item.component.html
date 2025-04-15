@@ -1,9 +1,11 @@
 <div [ngClass]="{'even': isEven(), 'odd': !isEven()}" class="shipment-item">
   <h2>Shipment for: {{ shipment.receiverName }}</h2>
-  <img *ngIf="shipment.image" [src]="shipment.image" alt="Shipment Image" class="shipment-image">
   <p><strong>Sender:</strong> {{ shipment.senderName }}</p>
   <p><strong>Address:</strong> {{ shipment.address }}</p>
   <p><strong>Weight:</strong> {{ shipment.weight }} kg</p>
   <p *ngIf="shipment.isFragile"><strong> Fragile </strong></p>
-</div>
 
+  <p><strong>Shipping Cost:</strong> {{ shipment.cost | currency }}</p>
+  <p><strong>Shipped Date:</strong> {{ shipment.date | date:'longDate' }}</p>
+  <p><strong>Type:</strong> {{ shipment.type | uppercase }}</p>
+</div>

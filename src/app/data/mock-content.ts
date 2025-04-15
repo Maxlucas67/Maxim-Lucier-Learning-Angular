@@ -10,7 +10,10 @@ export const MOCK_SHIPMENTS: Shipment[] = [
     address: '1110 Fortworth',
     weight: 3.5,
     isFragile: true,
-    image: 'models/cardboard.png'
+    image: 'models/cardboard.png',
+    cost: 25.99,
+    date: new Date('2025-04-10'),
+    type: 'standard'
   },
   {
     id: 102,

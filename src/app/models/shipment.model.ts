@@ -6,4 +6,8 @@ export interface Shipment {
   weight: number;
   isFragile?: boolean
   image?: string;
+
+  cost?: number;
+  date?: Date;
+  type?: string;
 }
