@@ -13,17 +13,29 @@ export class ShipmentService {
     return of(this.shipments);
   }
 
-  addShipments(shipment: Shipment): void {
-    this.shipments.push(shipment);
-  }
-  updateShipment(id: number, updatedShipment: Shipment): void {
-  const index = this.shipments.findIndex(s => s.id === id);
-  if (index !== -1) {
-    this.shipments[index] = updatedShipment
-  }
+  getShipmentById(id: number): Observable<Shipment | undefined> {
+    const shipment = this.shipments.find(s => s.id === id);
+    return of(shipment);
   }
 
-  deleteShipment(id: number): void {
-    this.shipments = this.shipments.filter(s => s.id !== id);
+  addShipment(shipment: Shipment): Observable<Shipment[]> {
+    this.shipments.push(shipment);
+    return of(this.shipments);
+  }
+
+  updateShipment(id: number, updatedShipment: Shipment): Observable<Shipment[]> {
+    const index = this.shipments.findIndex(s => s.id === id);
+    if (index !== -1) {
+      this.shipments[index] = updatedShipment;
+    }
+    return of(this.shipments);
+  }
+
+  deleteShipment(id: number): Observable<Shipment[]> {
+    const shipmentIndex = this.shipments.findIndex(s => s.id === id);
+    if (shipmentIndex !== -1) {
+      this.shipments.splice(shipmentIndex, 1);
+    }
+    return of(this.shipments);
   }
 }
